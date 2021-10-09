@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             string debugText =
                 "Ball mass = " + ballMass + "\n" +
                 "Ball velocity = " + ballVelocitiy + "\n" +
-                "Ball speed = " + ballVelocitiy + "\n" +
+                "Ball speed = " + ballSpeed + "\n" +
                 "Ball momentum = " + ballMomentum + "\n" +
                 "Ball friction = " + ballFriction + "\n" +
                 "Last implus from player 1 = (" + implusPlayer1X + ", " + implusPlayer1Y + ")\n" +
