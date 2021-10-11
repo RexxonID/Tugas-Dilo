@@ -6,7 +6,7 @@ public class BallControl : MonoBehaviour
 
     public float xInitialForce;
     public float yInitialForce;
-    float yRandomInitialForce;
+    public float force = 10;
 
     private Vector2 trajectoryOrigin;
 
@@ -14,7 +14,6 @@ public class BallControl : MonoBehaviour
     {
         trajectoryOrigin = transform.position;
         rigitBody2D = GetComponent<Rigidbody2D>();
-        yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
 
         Invoke("PushBall", 5);
     }
@@ -27,14 +26,15 @@ public class BallControl : MonoBehaviour
     void PushBall()
     {
         float randomDirection = Random.Range(0, 2);
-
-        if(randomDirection < 1.0f)
+        float yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
+        Debug.Log(yRandomInitialForce);
+        if (randomDirection < 1.0f)
         {
-            rigitBody2D.AddForce(new Vector2(-xInitialForce, yRandomInitialForce));
+            rigitBody2D.AddForce(new Vector2(-xInitialForce, yRandomInitialForce).normalized* force);
         }
         else
         {
-            rigitBody2D.AddForce(new Vector2(xInitialForce, yRandomInitialForce));
+            rigitBody2D.AddForce(new Vector2(xInitialForce, yRandomInitialForce).normalized* force);
         }
     }
     void RestartGame()
