@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xInitialForce: 50
   yInitialForce: 15
+  force: 50
 --- !u!58 &69107179
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -918,6 +919,7 @@ MonoBehaviour:
   ball: {fileID: 69107178}
   maxScore: 5
   trajectory: {fileID: 674675333}
+  keluar: 27
 --- !u!1001 &2952281077749188620
 PrefabInstance:
   m_ObjectHideFlags: 0
